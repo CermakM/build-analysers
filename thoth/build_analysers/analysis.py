@@ -182,7 +182,7 @@ def build_breaker_report(
 
         candidates = list(map(lambda t: dict(zip(["ln", "msg"], t)), errors.sort_values("score").msg[::-1].iteritems()))
 
-    return {"build_breaker": build_breaker_info, "reason": dict(zip(["ln", "msg"], reason)), "candidates": candidates}
+    return {"build_breaker": build_breaker_info, "reason": dict(zip(["ln", "msg"], reason)), "candidates": candidates, "handler": handler}
 
 
 def build_breaker_format_report(report: dict, indentation_level: int = 4) -> str:
